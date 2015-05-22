@@ -1,0 +1,73 @@
+grammar org.xtext.example.mydsl.MyDsl with org.eclipse.xtext.xbase.Xbase
+
+generate myDsl "http://www.xtext.org/example/mydsl/MyDsl"
+import "http://www.eclipse.org/xtext/xbase/Xbase" as xbase
+
+Description : 
+	'description' description += DescriptionElement+
+;
+
+DescriptionElement :
+ 	text = STRING | showValue = ShowValue |thisTarget?='this'| image=ImageReference
+ ;
+
+Rationale: 'rationale' text=STRING ;
+
+
+Uncertainty:
+	'uncertainty' 
+	'['
+	(
+		('volatility' volatility=Number)
+		&('costimpact' costimpact=Number)
+		&('scheduleimpact' scheduleimpact=Number)
+		&('familiarity' familiarity=Number)
+		&('timecriticality' timecriticality=Number)
+		&('riskindex' riskindex=Number)
+		&('maturityindex' maturityindex=Number)
+	)
+	']'
+;
+
+// New rule for val only
+XValDeclaration returns xbase::XExpression:
+	{xbase::XVariableDeclaration}
+	 'val' (=> (type=JvmTypeReference name=ID) | name=ID) '=' right=(APropertyReference|XExpression)
+;
+
+
+APropertyReference returns xbase::XExpression:
+	{APropertyReference} '@' 
+;
+
+//ComputeDeclaration returns xbase::XVariableDeclaration: 
+//{ComputeDeclaration} writeable?='compute'  (=> (type=JvmTypeReference name=ValidID) | name=ValidID)   
+//;
+ComputeDeclaration : 
+{ComputeDeclaration} writeable?='compute'   name=ID   
+;
+
+// Override XNumberLiteral from XBase
+//Accept unit and have value converter turn it into value scaled to base unit
+
+
+XNumberLiteral returns xbase::XNumberLiteral :
+	{XNumberLiteralUnit} value=Number ?
+	;
+
+ 
+// ShowValue: ref=[ConstantDecl|ID] ('%' unit=ID)?;	
+ ShowValue returns ShowValue: ref=[xbase::XVariableDeclaration];	
+
+ImageReference : 'img' imgfile=IMGREF;
+
+IMGREF : (ID '/')* ID '.' ID; 
+
+// Qualified classifier reference
+AADLCLASSIFIERREFERENCE:
+	ID ('::' ID)+ ('.' ID)?;
+
+AADLPROPERTYREFERENCE: ID ('::' ID)?;
+
+
+URIID: STRING;	
