@@ -25,9 +25,62 @@ public class InternalDomainmodelParser extends AbstractInternalContentAssistPars
     public static final String[] tokenNames = new String[] {
         "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_HEX", "RULE_INT", "RULE_DECIMAL", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'='", "'||'", "'&&'", "'+='", "'-='", "'*='", "'/='", "'%='", "'=='", "'!='", "'==='", "'!=='", "'>='", "'>'", "'<'", "'->'", "'..<'", "'..'", "'=>'", "'<>'", "'?:'", "'+'", "'-'", "'*'", "'**'", "'/'", "'%'", "'!'", "'++'", "'--'", "'.'", "'val'", "'extends'", "'static'", "'import'", "'extension'", "'super'", "'false'", "'package'", "'{'", "'}'", "'entity'", "'features'", "'vars'", "':'", "'op'", "'('", "')'", "','", "'instanceof'", "'as'", "'#'", "'['", "']'", "';'", "'if'", "'else'", "'switch'", "'default'", "'case'", "'for'", "'while'", "'do'", "'new'", "'null'", "'typeof'", "'throw'", "'return'", "'try'", "'finally'", "'synchronized'", "'catch'", "'?'", "'&'", "'::'", "'?.'", "'|'", "'var'", "'true'"
     };
+    public static final int RULE_ID=4;
+    public static final int T__29=29;
+    public static final int T__28=28;
+    public static final int T__27=27;
+    public static final int T__26=26;
+    public static final int T__25=25;
+    public static final int T__24=24;
+    public static final int T__23=23;
+    public static final int T__22=22;
+    public static final int T__21=21;
+    public static final int RULE_ANY_OTHER=12;
+    public static final int T__20=20;
+    public static final int EOF=-1;
+    public static final int T__19=19;
+    public static final int T__91=91;
     public static final int RULE_HEX=5;
-    public static final int T__50=50;
-    public static final int T__59=59;
+    public static final int T__16=16;
+    public static final int T__15=15;
+    public static final int T__90=90;
+    public static final int T__18=18;
+    public static final int T__17=17;
+    public static final int T__14=14;
+    public static final int T__13=13;
+    public static final int RULE_DECIMAL=7;
+    public static final int T__80=80;
+    public static final int T__81=81;
+    public static final int T__82=82;
+    public static final int T__83=83;
+    public static final int T__85=85;
+    public static final int T__84=84;
+    public static final int T__87=87;
+    public static final int T__86=86;
+    public static final int T__89=89;
+    public static final int T__88=88;
+    public static final int RULE_ML_COMMENT=9;
+    public static final int RULE_STRING=8;
+    public static final int T__71=71;
+    public static final int T__72=72;
+    public static final int T__70=70;
+    public static final int T__76=76;
+    public static final int T__75=75;
+    public static final int T__74=74;
+    public static final int T__73=73;
+    public static final int T__79=79;
+    public static final int T__78=78;
+    public static final int T__77=77;
+    public static final int T__68=68;
+    public static final int T__69=69;
+    public static final int T__66=66;
+    public static final int T__67=67;
+    public static final int T__64=64;
+    public static final int T__65=65;
+    public static final int T__62=62;
+    public static final int T__63=63;
+    public static final int T__61=61;
+    public static final int T__60=60;
     public static final int T__55=55;
     public static final int T__56=56;
     public static final int T__57=57;
@@ -36,84 +89,31 @@ public class InternalDomainmodelParser extends AbstractInternalContentAssistPars
     public static final int T__52=52;
     public static final int T__53=53;
     public static final int T__54=54;
-    public static final int T__60=60;
-    public static final int T__61=61;
-    public static final int RULE_ID=4;
+    public static final int T__59=59;
     public static final int RULE_INT=6;
-    public static final int T__66=66;
-    public static final int RULE_ML_COMMENT=9;
-    public static final int T__67=67;
-    public static final int T__68=68;
-    public static final int T__69=69;
-    public static final int T__62=62;
-    public static final int T__63=63;
-    public static final int T__64=64;
-    public static final int T__65=65;
-    public static final int T__37=37;
-    public static final int T__38=38;
-    public static final int T__39=39;
+    public static final int T__50=50;
+    public static final int T__42=42;
+    public static final int T__43=43;
+    public static final int T__40=40;
+    public static final int T__41=41;
+    public static final int T__46=46;
+    public static final int T__47=47;
+    public static final int T__44=44;
+    public static final int T__45=45;
+    public static final int T__48=48;
+    public static final int T__49=49;
+    public static final int RULE_SL_COMMENT=10;
+    public static final int T__30=30;
+    public static final int T__31=31;
+    public static final int T__32=32;
     public static final int T__33=33;
     public static final int T__34=34;
     public static final int T__35=35;
     public static final int T__36=36;
-    public static final int T__30=30;
-    public static final int T__31=31;
-    public static final int T__32=32;
-    public static final int T__48=48;
-    public static final int T__49=49;
-    public static final int T__44=44;
-    public static final int T__45=45;
-    public static final int T__46=46;
-    public static final int T__47=47;
-    public static final int T__40=40;
-    public static final int T__41=41;
-    public static final int T__42=42;
-    public static final int T__43=43;
-    public static final int T__91=91;
-    public static final int T__90=90;
-    public static final int T__19=19;
-    public static final int T__15=15;
-    public static final int T__16=16;
-    public static final int T__17=17;
-    public static final int T__18=18;
-    public static final int T__13=13;
-    public static final int T__14=14;
-    public static final int RULE_DECIMAL=7;
-    public static final int T__26=26;
-    public static final int T__27=27;
-    public static final int T__28=28;
-    public static final int T__29=29;
-    public static final int T__22=22;
-    public static final int T__23=23;
-    public static final int T__24=24;
-    public static final int T__25=25;
-    public static final int T__20=20;
-    public static final int T__21=21;
-    public static final int T__70=70;
-    public static final int T__71=71;
-    public static final int T__72=72;
-    public static final int RULE_STRING=8;
-    public static final int RULE_SL_COMMENT=10;
-    public static final int T__77=77;
-    public static final int T__78=78;
-    public static final int T__79=79;
-    public static final int T__73=73;
-    public static final int EOF=-1;
-    public static final int T__74=74;
-    public static final int T__75=75;
-    public static final int T__76=76;
-    public static final int T__80=80;
-    public static final int T__81=81;
-    public static final int T__82=82;
-    public static final int T__83=83;
+    public static final int T__37=37;
+    public static final int T__38=38;
+    public static final int T__39=39;
     public static final int RULE_WS=11;
-    public static final int RULE_ANY_OTHER=12;
-    public static final int T__88=88;
-    public static final int T__89=89;
-    public static final int T__84=84;
-    public static final int T__85=85;
-    public static final int T__86=86;
-    public static final int T__87=87;
 
     // delegates
     // delegators
@@ -7478,11 +7478,11 @@ public class InternalDomainmodelParser extends AbstractInternalContentAssistPars
                 {
                 int LA5_2 = input.LA(2);
 
-                if ( (LA5_2==EOF||(LA5_2>=RULE_ID && LA5_2<=RULE_STRING)||(LA5_2>=14 && LA5_2<=50)||(LA5_2>=52 && LA5_2<=53)||LA5_2==57||(LA5_2>=59 && LA5_2<=84)||(LA5_2>=87 && LA5_2<=88)||(LA5_2>=90 && LA5_2<=91)) ) {
-                    alt5=2;
-                }
-                else if ( (LA5_2==13) ) {
+                if ( (LA5_2==13) ) {
                     alt5=1;
+                }
+                else if ( (LA5_2==EOF||(LA5_2>=RULE_ID && LA5_2<=RULE_STRING)||(LA5_2>=14 && LA5_2<=50)||(LA5_2>=52 && LA5_2<=53)||LA5_2==57||(LA5_2>=59 && LA5_2<=84)||(LA5_2>=87 && LA5_2<=88)||(LA5_2>=90 && LA5_2<=91)) ) {
+                    alt5=2;
                 }
                 else {
                     if (state.backtracking>0) {state.failed=true; return ;}
@@ -7497,11 +7497,11 @@ public class InternalDomainmodelParser extends AbstractInternalContentAssistPars
                 {
                 int LA5_3 = input.LA(2);
 
-                if ( (LA5_3==13) ) {
-                    alt5=1;
-                }
-                else if ( (LA5_3==EOF||(LA5_3>=RULE_ID && LA5_3<=RULE_STRING)||(LA5_3>=14 && LA5_3<=50)||(LA5_3>=52 && LA5_3<=53)||LA5_3==57||(LA5_3>=59 && LA5_3<=84)||(LA5_3>=87 && LA5_3<=88)||(LA5_3>=90 && LA5_3<=91)) ) {
+                if ( (LA5_3==EOF||(LA5_3>=RULE_ID && LA5_3<=RULE_STRING)||(LA5_3>=14 && LA5_3<=50)||(LA5_3>=52 && LA5_3<=53)||LA5_3==57||(LA5_3>=59 && LA5_3<=84)||(LA5_3>=87 && LA5_3<=88)||(LA5_3>=90 && LA5_3<=91)) ) {
                     alt5=2;
+                }
+                else if ( (LA5_3==13) ) {
+                    alt5=1;
                 }
                 else {
                     if (state.backtracking>0) {state.failed=true; return ;}
@@ -8515,11 +8515,11 @@ public class InternalDomainmodelParser extends AbstractInternalContentAssistPars
             if ( (LA11_0==26) ) {
                 int LA11_1 = input.LA(2);
 
-                if ( (LA11_1==EOF||(LA11_1>=RULE_ID && LA11_1<=RULE_STRING)||LA11_1==27||(LA11_1>=34 && LA11_1<=35)||LA11_1==40||(LA11_1>=45 && LA11_1<=50)||LA11_1==52||LA11_1==59||(LA11_1>=64 && LA11_1<=65)||LA11_1==68||LA11_1==70||(LA11_1>=73 && LA11_1<=81)||LA11_1==83||LA11_1==91) ) {
-                    alt11=2;
-                }
-                else if ( (LA11_1==26) ) {
+                if ( (LA11_1==26) ) {
                     alt11=1;
+                }
+                else if ( (LA11_1==EOF||(LA11_1>=RULE_ID && LA11_1<=RULE_STRING)||LA11_1==27||(LA11_1>=34 && LA11_1<=35)||LA11_1==40||(LA11_1>=45 && LA11_1<=50)||LA11_1==52||LA11_1==59||(LA11_1>=64 && LA11_1<=65)||LA11_1==68||LA11_1==70||(LA11_1>=73 && LA11_1<=81)||LA11_1==83||LA11_1==91) ) {
+                    alt11=2;
                 }
                 else {
                     if (state.backtracking>0) {state.failed=true; return ;}
@@ -60416,263 +60416,11 @@ public class InternalDomainmodelParser extends AbstractInternalContentAssistPars
 
     // Delegated rules
 
-    public final boolean synpred50_InternalDomainmodel() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred50_InternalDomainmodel_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred120_InternalDomainmodel() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred120_InternalDomainmodel_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred75_InternalDomainmodel() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred75_InternalDomainmodel_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred64_InternalDomainmodel() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred64_InternalDomainmodel_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred69_InternalDomainmodel() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred69_InternalDomainmodel_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred164_InternalDomainmodel() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred164_InternalDomainmodel_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred167_InternalDomainmodel() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred167_InternalDomainmodel_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred156_InternalDomainmodel() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred156_InternalDomainmodel_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred112_InternalDomainmodel() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred112_InternalDomainmodel_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred42_InternalDomainmodel() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred42_InternalDomainmodel_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred101_InternalDomainmodel() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred101_InternalDomainmodel_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred106_InternalDomainmodel() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred106_InternalDomainmodel_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred111_InternalDomainmodel() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred111_InternalDomainmodel_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred100_InternalDomainmodel() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred100_InternalDomainmodel_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred108_InternalDomainmodel() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred108_InternalDomainmodel_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
     public final boolean synpred158_InternalDomainmodel() {
         state.backtracking++;
         int start = input.mark();
         try {
             synpred158_InternalDomainmodel_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred105_InternalDomainmodel() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred105_InternalDomainmodel_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred103_InternalDomainmodel() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred103_InternalDomainmodel_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred29_InternalDomainmodel() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred29_InternalDomainmodel_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -60696,11 +60444,11 @@ public class InternalDomainmodelParser extends AbstractInternalContentAssistPars
         state.failed=false;
         return success;
     }
-    public final boolean synpred107_InternalDomainmodel() {
+    public final boolean synpred42_InternalDomainmodel() {
         state.backtracking++;
         int start = input.mark();
         try {
-            synpred107_InternalDomainmodel_fragment(); // can never throw exception
+            synpred42_InternalDomainmodel_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -60710,11 +60458,11 @@ public class InternalDomainmodelParser extends AbstractInternalContentAssistPars
         state.failed=false;
         return success;
     }
-    public final boolean synpred166_InternalDomainmodel() {
+    public final boolean synpred164_InternalDomainmodel() {
         state.backtracking++;
         int start = input.mark();
         try {
-            synpred166_InternalDomainmodel_fragment(); // can never throw exception
+            synpred164_InternalDomainmodel_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -60738,11 +60486,11 @@ public class InternalDomainmodelParser extends AbstractInternalContentAssistPars
         state.failed=false;
         return success;
     }
-    public final boolean synpred127_InternalDomainmodel() {
+    public final boolean synpred104_InternalDomainmodel() {
         state.backtracking++;
         int start = input.mark();
         try {
-            synpred127_InternalDomainmodel_fragment(); // can never throw exception
+            synpred104_InternalDomainmodel_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -60752,11 +60500,11 @@ public class InternalDomainmodelParser extends AbstractInternalContentAssistPars
         state.failed=false;
         return success;
     }
-    public final boolean synpred144_InternalDomainmodel() {
+    public final boolean synpred50_InternalDomainmodel() {
         state.backtracking++;
         int start = input.mark();
         try {
-            synpred144_InternalDomainmodel_fragment(); // can never throw exception
+            synpred50_InternalDomainmodel_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -60766,11 +60514,11 @@ public class InternalDomainmodelParser extends AbstractInternalContentAssistPars
         state.failed=false;
         return success;
     }
-    public final boolean synpred149_InternalDomainmodel() {
+    public final boolean synpred29_InternalDomainmodel() {
         state.backtracking++;
         int start = input.mark();
         try {
-            synpred149_InternalDomainmodel_fragment(); // can never throw exception
+            synpred29_InternalDomainmodel_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -60780,25 +60528,11 @@ public class InternalDomainmodelParser extends AbstractInternalContentAssistPars
         state.failed=false;
         return success;
     }
-    public final boolean synpred155_InternalDomainmodel() {
+    public final boolean synpred167_InternalDomainmodel() {
         state.backtracking++;
         int start = input.mark();
         try {
-            synpred155_InternalDomainmodel_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred68_InternalDomainmodel() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred68_InternalDomainmodel_fragment(); // can never throw exception
+            synpred167_InternalDomainmodel_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -60822,11 +60556,11 @@ public class InternalDomainmodelParser extends AbstractInternalContentAssistPars
         state.failed=false;
         return success;
     }
-    public final boolean synpred104_InternalDomainmodel() {
+    public final boolean synpred156_InternalDomainmodel() {
         state.backtracking++;
         int start = input.mark();
         try {
-            synpred104_InternalDomainmodel_fragment(); // can never throw exception
+            synpred156_InternalDomainmodel_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -60836,11 +60570,11 @@ public class InternalDomainmodelParser extends AbstractInternalContentAssistPars
         state.failed=false;
         return success;
     }
-    public final boolean synpred150_InternalDomainmodel() {
+    public final boolean synpred107_InternalDomainmodel() {
         state.backtracking++;
         int start = input.mark();
         try {
-            synpred150_InternalDomainmodel_fragment(); // can never throw exception
+            synpred107_InternalDomainmodel_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -60850,53 +60584,11 @@ public class InternalDomainmodelParser extends AbstractInternalContentAssistPars
         state.failed=false;
         return success;
     }
-    public final boolean synpred148_InternalDomainmodel() {
+    public final boolean synpred68_InternalDomainmodel() {
         state.backtracking++;
         int start = input.mark();
         try {
-            synpred148_InternalDomainmodel_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred143_InternalDomainmodel() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred143_InternalDomainmodel_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred109_InternalDomainmodel() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred109_InternalDomainmodel_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred98_InternalDomainmodel() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred98_InternalDomainmodel_fragment(); // can never throw exception
+            synpred68_InternalDomainmodel_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -60934,11 +60626,319 @@ public class InternalDomainmodelParser extends AbstractInternalContentAssistPars
         state.failed=false;
         return success;
     }
+    public final boolean synpred127_InternalDomainmodel() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred127_InternalDomainmodel_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred150_InternalDomainmodel() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred150_InternalDomainmodel_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred155_InternalDomainmodel() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred155_InternalDomainmodel_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred75_InternalDomainmodel() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred75_InternalDomainmodel_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred101_InternalDomainmodel() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred101_InternalDomainmodel_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred98_InternalDomainmodel() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred98_InternalDomainmodel_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred143_InternalDomainmodel() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred143_InternalDomainmodel_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred64_InternalDomainmodel() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred64_InternalDomainmodel_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
     public final boolean synpred157_InternalDomainmodel() {
         state.backtracking++;
         int start = input.mark();
         try {
             synpred157_InternalDomainmodel_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred120_InternalDomainmodel() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred120_InternalDomainmodel_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred111_InternalDomainmodel() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred111_InternalDomainmodel_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred148_InternalDomainmodel() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred148_InternalDomainmodel_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred69_InternalDomainmodel() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred69_InternalDomainmodel_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred105_InternalDomainmodel() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred105_InternalDomainmodel_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred144_InternalDomainmodel() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred144_InternalDomainmodel_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred166_InternalDomainmodel() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred166_InternalDomainmodel_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred149_InternalDomainmodel() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred149_InternalDomainmodel_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred103_InternalDomainmodel() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred103_InternalDomainmodel_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred109_InternalDomainmodel() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred109_InternalDomainmodel_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred108_InternalDomainmodel() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred108_InternalDomainmodel_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred100_InternalDomainmodel() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred100_InternalDomainmodel_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred106_InternalDomainmodel() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred106_InternalDomainmodel_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred112_InternalDomainmodel() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred112_InternalDomainmodel_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -60981,14 +60981,14 @@ public class InternalDomainmodelParser extends AbstractInternalContentAssistPars
     static final String DFA10_maxS =
         "\1\41\2\uffff\1\36\7\uffff";
     static final String DFA10_acceptS =
-        "\1\uffff\1\1\1\2\1\uffff\1\4\1\5\1\7\1\10\1\11\1\6\1\3";
+        "\1\uffff\1\1\1\2\1\uffff\1\4\1\5\1\7\1\10\1\11\1\3\1\6";
     static final String DFA10_specialS =
         "\13\uffff}>";
     static final String[] DFA10_transitionS = {
             "\1\3\1\6\1\1\1\2\1\4\1\5\1\7\1\10",
             "",
             "",
-            "\1\11\3\uffff\1\12",
+            "\1\12\3\uffff\1\11",
             "",
             "",
             "",
@@ -61679,23 +61679,23 @@ public class InternalDomainmodelParser extends AbstractInternalContentAssistPars
     static final String DFA42_eotS =
         "\7\uffff";
     static final String DFA42_eofS =
-        "\2\uffff\1\4\2\uffff\1\4\1\uffff";
+        "\2\uffff\1\4\3\uffff\1\4";
     static final String DFA42_minS =
-        "\1\4\1\uffff\1\53\1\4\1\uffff\1\53\1\uffff";
+        "\1\4\1\uffff\1\53\1\4\2\uffff\1\53";
     static final String DFA42_maxS =
-        "\1\56\1\uffff\1\103\1\44\1\uffff\1\103\1\uffff";
+        "\1\56\1\uffff\1\103\1\44\2\uffff\1\103";
     static final String DFA42_acceptS =
-        "\1\uffff\1\1\2\uffff\1\2\1\uffff\1\3";
+        "\1\uffff\1\1\2\uffff\1\2\1\3\1\uffff";
     static final String DFA42_specialS =
         "\7\uffff}>";
     static final String[] DFA42_transitionS = {
             "\1\2\51\uffff\1\1",
             "",
             "\1\3\3\uffff\1\4\3\uffff\1\4\2\uffff\1\4\14\uffff\1\4",
-            "\1\5\37\uffff\1\6",
+            "\1\6\37\uffff\1\5",
             "",
-            "\1\3\3\uffff\1\4\3\uffff\1\4\2\uffff\1\4\14\uffff\1\4",
-            ""
+            "",
+            "\1\3\3\uffff\1\4\3\uffff\1\4\2\uffff\1\4\14\uffff\1\4"
     };
 
     static final short[] DFA42_eot = DFA.unpackEncodedString(DFA42_eotS);
@@ -61742,7 +61742,7 @@ public class InternalDomainmodelParser extends AbstractInternalContentAssistPars
     static final String DFA55_acceptS =
         "\10\uffff\1\2\1\1";
     static final String DFA55_specialS =
-        "\1\uffff\1\4\1\2\1\0\1\6\1\5\1\3\1\1\2\uffff}>";
+        "\1\uffff\1\2\1\5\1\4\1\3\1\6\1\0\1\1\2\uffff}>";
     static final String[] DFA55_transitionS = {
             "\5\10\5\uffff\2\10\1\1\1\2\1\3\1\4\1\5\5\10\1\7\1\6\27\10\1\uffff\2\10\3\uffff\1\10\1\uffff\32\10\2\uffff\2\10\1\uffff\2\10",
             "\1\uffff",
@@ -61793,10 +61793,10 @@ public class InternalDomainmodelParser extends AbstractInternalContentAssistPars
         	int _s = s;
             switch ( s ) {
                     case 0 : 
-                        int LA55_3 = input.LA(1);
+                        int LA55_6 = input.LA(1);
 
                          
-                        int index55_3 = input.index();
+                        int index55_6 = input.index();
                         input.rewind();
                         s = -1;
                         if ( (synpred98_InternalDomainmodel()) ) {s = 9;}
@@ -61804,7 +61804,7 @@ public class InternalDomainmodelParser extends AbstractInternalContentAssistPars
                         else if ( (true) ) {s = 8;}
 
                          
-                        input.seek(index55_3);
+                        input.seek(index55_6);
                         if ( s>=0 ) return s;
                         break;
                     case 1 : 
@@ -61823,36 +61823,6 @@ public class InternalDomainmodelParser extends AbstractInternalContentAssistPars
                         if ( s>=0 ) return s;
                         break;
                     case 2 : 
-                        int LA55_2 = input.LA(1);
-
-                         
-                        int index55_2 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (synpred98_InternalDomainmodel()) ) {s = 9;}
-
-                        else if ( (true) ) {s = 8;}
-
-                         
-                        input.seek(index55_2);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 3 : 
-                        int LA55_6 = input.LA(1);
-
-                         
-                        int index55_6 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (synpred98_InternalDomainmodel()) ) {s = 9;}
-
-                        else if ( (true) ) {s = 8;}
-
-                         
-                        input.seek(index55_6);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 4 : 
                         int LA55_1 = input.LA(1);
 
                          
@@ -61867,22 +61837,7 @@ public class InternalDomainmodelParser extends AbstractInternalContentAssistPars
                         input.seek(index55_1);
                         if ( s>=0 ) return s;
                         break;
-                    case 5 : 
-                        int LA55_5 = input.LA(1);
-
-                         
-                        int index55_5 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (synpred98_InternalDomainmodel()) ) {s = 9;}
-
-                        else if ( (true) ) {s = 8;}
-
-                         
-                        input.seek(index55_5);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 6 : 
+                    case 3 : 
                         int LA55_4 = input.LA(1);
 
                          
@@ -61895,6 +61850,51 @@ public class InternalDomainmodelParser extends AbstractInternalContentAssistPars
 
                          
                         input.seek(index55_4);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 4 : 
+                        int LA55_3 = input.LA(1);
+
+                         
+                        int index55_3 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred98_InternalDomainmodel()) ) {s = 9;}
+
+                        else if ( (true) ) {s = 8;}
+
+                         
+                        input.seek(index55_3);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 5 : 
+                        int LA55_2 = input.LA(1);
+
+                         
+                        int index55_2 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred98_InternalDomainmodel()) ) {s = 9;}
+
+                        else if ( (true) ) {s = 8;}
+
+                         
+                        input.seek(index55_2);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 6 : 
+                        int LA55_5 = input.LA(1);
+
+                         
+                        int index55_5 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred98_InternalDomainmodel()) ) {s = 9;}
+
+                        else if ( (true) ) {s = 8;}
+
+                         
+                        input.seek(index55_5);
                         if ( s>=0 ) return s;
                         break;
             }
@@ -61916,7 +61916,7 @@ public class InternalDomainmodelParser extends AbstractInternalContentAssistPars
     static final String DFA61_acceptS =
         "\1\uffff\1\2\10\uffff\1\1";
     static final String DFA61_specialS =
-        "\2\uffff\1\3\1\1\1\2\1\5\1\7\1\4\1\0\1\6\1\uffff}>";
+        "\2\uffff\1\1\1\7\1\5\1\4\1\2\1\3\1\0\1\6\1\uffff}>";
     static final String[] DFA61_transitionS = {
             "\5\1\5\uffff\14\1\1\3\1\2\1\4\1\5\1\6\1\7\1\10\1\11\21\1\1\uffff\2\1\3\uffff\1\1\1\uffff\32\1\2\uffff\2\1\1\uffff\2\1",
             "",
@@ -61983,36 +61983,6 @@ public class InternalDomainmodelParser extends AbstractInternalContentAssistPars
                         if ( s>=0 ) return s;
                         break;
                     case 1 : 
-                        int LA61_3 = input.LA(1);
-
-                         
-                        int index61_3 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (synpred104_InternalDomainmodel()) ) {s = 10;}
-
-                        else if ( (true) ) {s = 1;}
-
-                         
-                        input.seek(index61_3);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 2 : 
-                        int LA61_4 = input.LA(1);
-
-                         
-                        int index61_4 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (synpred104_InternalDomainmodel()) ) {s = 10;}
-
-                        else if ( (true) ) {s = 1;}
-
-                         
-                        input.seek(index61_4);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 3 : 
                         int LA61_2 = input.LA(1);
 
                          
@@ -62027,7 +61997,22 @@ public class InternalDomainmodelParser extends AbstractInternalContentAssistPars
                         input.seek(index61_2);
                         if ( s>=0 ) return s;
                         break;
-                    case 4 : 
+                    case 2 : 
+                        int LA61_6 = input.LA(1);
+
+                         
+                        int index61_6 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred104_InternalDomainmodel()) ) {s = 10;}
+
+                        else if ( (true) ) {s = 1;}
+
+                         
+                        input.seek(index61_6);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 3 : 
                         int LA61_7 = input.LA(1);
 
                          
@@ -62042,7 +62027,7 @@ public class InternalDomainmodelParser extends AbstractInternalContentAssistPars
                         input.seek(index61_7);
                         if ( s>=0 ) return s;
                         break;
-                    case 5 : 
+                    case 4 : 
                         int LA61_5 = input.LA(1);
 
                          
@@ -62055,6 +62040,21 @@ public class InternalDomainmodelParser extends AbstractInternalContentAssistPars
 
                          
                         input.seek(index61_5);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 5 : 
+                        int LA61_4 = input.LA(1);
+
+                         
+                        int index61_4 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred104_InternalDomainmodel()) ) {s = 10;}
+
+                        else if ( (true) ) {s = 1;}
+
+                         
+                        input.seek(index61_4);
                         if ( s>=0 ) return s;
                         break;
                     case 6 : 
@@ -62073,10 +62073,10 @@ public class InternalDomainmodelParser extends AbstractInternalContentAssistPars
                         if ( s>=0 ) return s;
                         break;
                     case 7 : 
-                        int LA61_6 = input.LA(1);
+                        int LA61_3 = input.LA(1);
 
                          
-                        int index61_6 = input.index();
+                        int index61_3 = input.index();
                         input.rewind();
                         s = -1;
                         if ( (synpred104_InternalDomainmodel()) ) {s = 10;}
@@ -62084,7 +62084,7 @@ public class InternalDomainmodelParser extends AbstractInternalContentAssistPars
                         else if ( (true) ) {s = 1;}
 
                          
-                        input.seek(index61_6);
+                        input.seek(index61_3);
                         if ( s>=0 ) return s;
                         break;
             }

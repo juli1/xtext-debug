@@ -14,6 +14,12 @@ import org.eclipse.xtext.xbase.compiler.XbaseCompiler
 import org.eclipse.xtext.xbase.compiler.output.FakeTreeAppendable
 import org.eclipse.xtext.common.types.TypesFactory
 import org.eclipse.xtext.xbase.compiler.ImportManager
+import org.eclipse.xtext.xbase.interpreter.impl.XbaseInterpreter
+import org.eclipse.xtext.xbase.interpreter.impl.DefaultEvaluationContext
+import org.eclipse.xtext.xbase.interpreter.IEvaluationContext
+import org.eclipse.xtext.xbase.interpreter.IEvaluationResult
+import org.eclipse.xtext.util.CancelIndicator
+import org.eclipse.xtext.naming.QualifiedName
 
 @ImplementedBy (ProcessLogicDefault)
 interface IProcessLogic{
@@ -24,7 +30,8 @@ class ProcessLogicDefault implements IProcessLogic
 {
 	@Inject extension JvmTypesBuilder
 	@Inject extension IQualifiedNameProvider
-	@Inject XbaseCompiler xbaseCompiler
+	
+	@Inject XbaseInterpreter interpreter
 	
 	
 	override process(PackageDeclaration pkg) {
@@ -33,10 +40,30 @@ class ProcessLogicDefault implements IProcessLogic
 	}
 	
 	def processEntity(Entity entity) {
+				println ("entity" + entity.name)
+		
 		entity.features.forEach[f | processFeature (f)]
-		entity.vars.forEach[v | processVar (v)]
+		
+		val ctx = new DefaultEvaluationContext()
+		entity.vars.forEach[v | processVar (v as XVariableDeclaration, ctx)]
+		
+//		entity.vars.
+//		entity.vars.expressions.filter(XVariableDeclaration).forEach[v | processVar(v, ctx)]
 	}
 	
+
+	
+	def processVar(XVariableDeclaration v, IEvaluationContext ctx) {
+		try {
+			val IEvaluationResult r = interpreter.evaluate(v, ctx, CancelIndicator.NullImpl)
+			val o = ctx.getValue(QualifiedName.create(v.name))
+			println(v.name + " = " + o)
+		} catch(Exception e) {
+			e.printStackTrace
+		}
+		
+	}
+	 
 	def getJvmType(PackageDeclaration decl) {
 		val declaredType = TypesFactory::eINSTANCE.createJvmGenericType
 		declaredType.setSimpleName(decl.class.name)
@@ -44,32 +71,9 @@ class ProcessLogicDefault implements IProcessLogic
 		declaredType
 	}
 	
-	def compile(XExpression xExpression, FakeTreeAppendable ft) {
-		
-		xbaseCompiler.toJavaStatement(xExpression, ft, true)
-		
-	}
 	
-	def processVar(XExpression expression) {
-		println ("expression" + expression)
-		println ("expression class" + expression.class.toString)
-		var xvar = expression as XVariableDeclaration
-		if (xvar.type != null)
-		{
-			println ("var type explicit" + (expression as XVariableDeclaration).type.toString)
-		}
-		else
-		{
-			val typeRef = xvar.inferredType
-			println ("var type implicit" + typeRef.simpleName)
-		}
-		
-		val im = new ImportManager()
-		val ft = new FakeTreeAppendable(im)
-		xbaseCompiler.compileAsJavaExpression (xvar.right, ft, xvar.type)
-		println("ft=" + ft.toString)
-		
-	}
+	
+	
 	
 	def processFeature(Feature feature) {
 		println ("feature" + feature)
