@@ -22,6 +22,9 @@
         eType="#//Feature" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="vars" upperBound="-1" eType="ecore:EClass platform:/resource/org.eclipse.xtext.xbase/model/Xbase.ecore#//XExpression"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="assertExpression" upperBound="-1"
+        eType="ecore:EClass platform:/resource/org.eclipse.xtext.xbase/model/Xbase.ecore#//XExpression"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Feature">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

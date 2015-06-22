@@ -205,13 +205,22 @@ public interface DomainmodelPackage extends EPackage
   int ENTITY__VARS = ABSTRACT_ELEMENT_FEATURE_COUNT + 2;
 
   /**
+   * The feature id for the '<em><b>Assert Expression</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ENTITY__ASSERT_EXPRESSION = ABSTRACT_ELEMENT_FEATURE_COUNT + 3;
+
+  /**
    * The number of structural features of the '<em>Entity</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ENTITY_FEATURE_COUNT = ABSTRACT_ELEMENT_FEATURE_COUNT + 3;
+  int ENTITY_FEATURE_COUNT = ABSTRACT_ELEMENT_FEATURE_COUNT + 4;
 
   /**
    * The meta object id for the '{@link org.eclipse.xtext.example.domainmodel.domainmodel.impl.FeatureImpl <em>Feature</em>}' class.
@@ -461,6 +470,17 @@ public interface DomainmodelPackage extends EPackage
   EReference getEntity_Vars();
 
   /**
+   * Returns the meta object for the containment reference list '{@link org.eclipse.xtext.example.domainmodel.domainmodel.Entity#getAssertExpression <em>Assert Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Assert Expression</em>'.
+   * @see org.eclipse.xtext.example.domainmodel.domainmodel.Entity#getAssertExpression()
+   * @see #getEntity()
+   * @generated
+   */
+  EReference getEntity_AssertExpression();
+
+  /**
    * Returns the meta object for class '{@link org.eclipse.xtext.example.domainmodel.domainmodel.Feature <em>Feature</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -652,6 +672,14 @@ public interface DomainmodelPackage extends EPackage
      * @generated
      */
     EReference ENTITY__VARS = eINSTANCE.getEntity_Vars();
+
+    /**
+     * The meta object literal for the '<em><b>Assert Expression</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ENTITY__ASSERT_EXPRESSION = eINSTANCE.getEntity_AssertExpression();
 
     /**
      * The meta object literal for the '{@link org.eclipse.xtext.example.domainmodel.domainmodel.impl.FeatureImpl <em>Feature</em>}' class.

@@ -335,9 +335,31 @@ ruleEntity returns [EObject current=null]
 	    }
 
 )
-)*)?	otherlv_9='}' 
+)*)?(	otherlv_9='assert' 
     {
-    	newLeafNode(otherlv_9, grammarAccess.getEntityAccess().getRightCurlyBracketKeyword_6());
+    	newLeafNode(otherlv_9, grammarAccess.getEntityAccess().getAssertKeyword_6_0());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getEntityAccess().getAssertExpressionXExpressionParserRuleCall_6_1_0()); 
+	    }
+		lv_assertExpression_10_0=ruleXExpression		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getEntityRule());
+	        }
+       		add(
+       			$current, 
+       			"assertExpression",
+        		lv_assertExpression_10_0, 
+        		"XExpression");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))?	otherlv_11='}' 
+    {
+    	newLeafNode(otherlv_11, grammarAccess.getEntityAccess().getRightCurlyBracketKeyword_7());
     }
 )
 ;

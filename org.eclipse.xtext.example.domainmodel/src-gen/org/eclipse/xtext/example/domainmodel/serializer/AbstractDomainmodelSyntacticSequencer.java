@@ -106,8 +106,10 @@ public abstract class AbstractDomainmodelSyntacticSequencer extends AbstractSynt
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     name=ValidID '{' (ambiguity) 'vars' vars+=XVariableDeclaration
+	 *     name=ValidID '{' (ambiguity) 'vars'? 'assert' assertExpression+=XExpression
 	 *     name=ValidID '{' (ambiguity) 'vars'? '}' (rule end)
 	 *     superType=JvmParameterizedTypeReference '{' (ambiguity) 'vars' vars+=XVariableDeclaration
+	 *     superType=JvmParameterizedTypeReference '{' (ambiguity) 'vars'? 'assert' assertExpression+=XExpression
 	 *     superType=JvmParameterizedTypeReference '{' (ambiguity) 'vars'? '}' (rule end)
 	 */
 	protected void emit_Entity_FeaturesKeyword_4_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
@@ -119,8 +121,11 @@ public abstract class AbstractDomainmodelSyntacticSequencer extends AbstractSynt
 	 *     'vars'?
 	 *
 	 * This ambiguous syntax occurs at:
+	 *     features+=Feature (ambiguity) 'assert' assertExpression+=XExpression
 	 *     features+=Feature (ambiguity) '}' (rule end)
+	 *     name=ValidID '{' 'features'? (ambiguity) 'assert' assertExpression+=XExpression
 	 *     name=ValidID '{' 'features'? (ambiguity) '}' (rule end)
+	 *     superType=JvmParameterizedTypeReference '{' 'features'? (ambiguity) 'assert' assertExpression+=XExpression
 	 *     superType=JvmParameterizedTypeReference '{' 'features'? (ambiguity) '}' (rule end)
 	 */
 	protected void emit_Entity_VarsKeyword_5_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {

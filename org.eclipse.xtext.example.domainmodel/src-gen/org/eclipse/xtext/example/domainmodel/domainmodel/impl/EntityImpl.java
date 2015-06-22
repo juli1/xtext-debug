@@ -35,6 +35,7 @@ import org.eclipse.xtext.xbase.XExpression;
  *   <li>{@link org.eclipse.xtext.example.domainmodel.domainmodel.impl.EntityImpl#getSuperType <em>Super Type</em>}</li>
  *   <li>{@link org.eclipse.xtext.example.domainmodel.domainmodel.impl.EntityImpl#getFeatures <em>Features</em>}</li>
  *   <li>{@link org.eclipse.xtext.example.domainmodel.domainmodel.impl.EntityImpl#getVars <em>Vars</em>}</li>
+ *   <li>{@link org.eclipse.xtext.example.domainmodel.domainmodel.impl.EntityImpl#getAssertExpression <em>Assert Expression</em>}</li>
  * </ul>
  * </p>
  *
@@ -71,6 +72,16 @@ public class EntityImpl extends AbstractElementImpl implements Entity
    * @ordered
    */
   protected EList<XExpression> vars;
+
+  /**
+   * The cached value of the '{@link #getAssertExpression() <em>Assert Expression</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getAssertExpression()
+   * @generated
+   * @ordered
+   */
+  protected EList<XExpression> assertExpression;
 
   /**
    * <!-- begin-user-doc -->
@@ -174,6 +185,20 @@ public class EntityImpl extends AbstractElementImpl implements Entity
    * <!-- end-user-doc -->
    * @generated
    */
+  public EList<XExpression> getAssertExpression()
+  {
+    if (assertExpression == null)
+    {
+      assertExpression = new EObjectContainmentEList<XExpression>(XExpression.class, this, DomainmodelPackage.ENTITY__ASSERT_EXPRESSION);
+    }
+    return assertExpression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -185,6 +210,8 @@ public class EntityImpl extends AbstractElementImpl implements Entity
         return ((InternalEList<?>)getFeatures()).basicRemove(otherEnd, msgs);
       case DomainmodelPackage.ENTITY__VARS:
         return ((InternalEList<?>)getVars()).basicRemove(otherEnd, msgs);
+      case DomainmodelPackage.ENTITY__ASSERT_EXPRESSION:
+        return ((InternalEList<?>)getAssertExpression()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -205,6 +232,8 @@ public class EntityImpl extends AbstractElementImpl implements Entity
         return getFeatures();
       case DomainmodelPackage.ENTITY__VARS:
         return getVars();
+      case DomainmodelPackage.ENTITY__ASSERT_EXPRESSION:
+        return getAssertExpression();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -231,6 +260,10 @@ public class EntityImpl extends AbstractElementImpl implements Entity
         getVars().clear();
         getVars().addAll((Collection<? extends XExpression>)newValue);
         return;
+      case DomainmodelPackage.ENTITY__ASSERT_EXPRESSION:
+        getAssertExpression().clear();
+        getAssertExpression().addAll((Collection<? extends XExpression>)newValue);
+        return;
     }
     super.eSet(featureID, newValue);
   }
@@ -254,6 +287,9 @@ public class EntityImpl extends AbstractElementImpl implements Entity
       case DomainmodelPackage.ENTITY__VARS:
         getVars().clear();
         return;
+      case DomainmodelPackage.ENTITY__ASSERT_EXPRESSION:
+        getAssertExpression().clear();
+        return;
     }
     super.eUnset(featureID);
   }
@@ -274,6 +310,8 @@ public class EntityImpl extends AbstractElementImpl implements Entity
         return features != null && !features.isEmpty();
       case DomainmodelPackage.ENTITY__VARS:
         return vars != null && !vars.isEmpty();
+      case DomainmodelPackage.ENTITY__ASSERT_EXPRESSION:
+        return assertExpression != null && !assertExpression.isEmpty();
     }
     return super.eIsSet(featureID);
   }

@@ -19,6 +19,7 @@ import org.eclipse.xtext.xbase.XExpression;
  *   <li>{@link org.eclipse.xtext.example.domainmodel.domainmodel.Entity#getSuperType <em>Super Type</em>}</li>
  *   <li>{@link org.eclipse.xtext.example.domainmodel.domainmodel.Entity#getFeatures <em>Features</em>}</li>
  *   <li>{@link org.eclipse.xtext.example.domainmodel.domainmodel.Entity#getVars <em>Vars</em>}</li>
+ *   <li>{@link org.eclipse.xtext.example.domainmodel.domainmodel.Entity#getAssertExpression <em>Assert Expression</em>}</li>
  * </ul>
  * </p>
  *
@@ -85,5 +86,21 @@ public interface Entity extends AbstractElement
    * @generated
    */
   EList<XExpression> getVars();
+
+  /**
+   * Returns the value of the '<em><b>Assert Expression</b></em>' containment reference list.
+   * The list contents are of type {@link org.eclipse.xtext.xbase.XExpression}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Assert Expression</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Assert Expression</em>' containment reference list.
+   * @see org.eclipse.xtext.example.domainmodel.domainmodel.DomainmodelPackage#getEntity_AssertExpression()
+   * @model containment="true"
+   * @generated
+   */
+  EList<XExpression> getAssertExpression();
 
 } // Entity

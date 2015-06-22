@@ -264,6 +264,16 @@ public class DomainmodelPackageImpl extends EPackageImpl implements DomainmodelP
    * <!-- end-user-doc -->
    * @generated
    */
+  public EReference getEntity_AssertExpression()
+  {
+    return (EReference)entityEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getFeature()
   {
     return featureEClass;
@@ -373,6 +383,7 @@ public class DomainmodelPackageImpl extends EPackageImpl implements DomainmodelP
     createEReference(entityEClass, ENTITY__SUPER_TYPE);
     createEReference(entityEClass, ENTITY__FEATURES);
     createEReference(entityEClass, ENTITY__VARS);
+    createEReference(entityEClass, ENTITY__ASSERT_EXPRESSION);
 
     featureEClass = createEClass(FEATURE);
     createEAttribute(featureEClass, FEATURE__NAME);
@@ -439,6 +450,7 @@ public class DomainmodelPackageImpl extends EPackageImpl implements DomainmodelP
     initEReference(getEntity_SuperType(), theTypesPackage.getJvmParameterizedTypeReference(), null, "superType", null, 0, 1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getEntity_Features(), this.getFeature(), null, "features", null, 0, -1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getEntity_Vars(), theXbasePackage.getXExpression(), null, "vars", null, 0, -1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getEntity_AssertExpression(), theXbasePackage.getXExpression(), null, "assertExpression", null, 0, -1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(featureEClass, Feature.class, "Feature", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getFeature_Name(), ecorePackage.getEString(), "name", null, 0, 1, Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

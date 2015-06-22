@@ -126,15 +126,19 @@ public class DomainmodelGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cVarsKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
 		private final Assignment cVarsAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
 		private final RuleCall cVarsXVariableDeclarationParserRuleCall_5_1_0 = (RuleCall)cVarsAssignment_5_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
+		private final Keyword cAssertKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
+		private final Assignment cAssertExpressionAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
+		private final RuleCall cAssertExpressionXExpressionParserRuleCall_6_1_0 = (RuleCall)cAssertExpressionAssignment_6_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		
 		//Entity:
 		//	"entity" name=ValidID ("extends" superType=JvmParameterizedTypeReference)? "{" ("features" features+=Feature*)?
-		//	("vars" vars+=XVariableDeclaration*)? "}";
+		//	("vars" vars+=XVariableDeclaration*)? ("assert" assertExpression+=XExpression)? "}";
 		@Override public ParserRule getRule() { return rule; }
 
 		//"entity" name=ValidID ("extends" superType=JvmParameterizedTypeReference)? "{" ("features" features+=Feature*)? ("vars"
-		//vars+=XVariableDeclaration*)? "}"
+		//vars+=XVariableDeclaration*)? ("assert" assertExpression+=XExpression)? "}"
 		public Group getGroup() { return cGroup; }
 
 		//"entity"
@@ -185,8 +189,20 @@ public class DomainmodelGrammarAccess extends AbstractGrammarElementFinder {
 		//XVariableDeclaration
 		public RuleCall getVarsXVariableDeclarationParserRuleCall_5_1_0() { return cVarsXVariableDeclarationParserRuleCall_5_1_0; }
 
+		//("assert" assertExpression+=XExpression)?
+		public Group getGroup_6() { return cGroup_6; }
+
+		//"assert"
+		public Keyword getAssertKeyword_6_0() { return cAssertKeyword_6_0; }
+
+		//assertExpression+=XExpression
+		public Assignment getAssertExpressionAssignment_6_1() { return cAssertExpressionAssignment_6_1; }
+
+		//XExpression
+		public RuleCall getAssertExpressionXExpressionParserRuleCall_6_1_0() { return cAssertExpressionXExpressionParserRuleCall_6_1_0; }
+
 		//"}"
-		public Keyword getRightCurlyBracketKeyword_6() { return cRightCurlyBracketKeyword_6; }
+		public Keyword getRightCurlyBracketKeyword_7() { return cRightCurlyBracketKeyword_7; }
 	}
 
 	public class FeatureElements extends AbstractParserRuleElementFinder {
@@ -413,7 +429,7 @@ public class DomainmodelGrammarAccess extends AbstractGrammarElementFinder {
 
 	//Entity:
 	//	"entity" name=ValidID ("extends" superType=JvmParameterizedTypeReference)? "{" ("features" features+=Feature*)?
-	//	("vars" vars+=XVariableDeclaration*)? "}";
+	//	("vars" vars+=XVariableDeclaration*)? ("assert" assertExpression+=XExpression)? "}";
 	public EntityElements getEntityAccess() {
 		return pEntity;
 	}

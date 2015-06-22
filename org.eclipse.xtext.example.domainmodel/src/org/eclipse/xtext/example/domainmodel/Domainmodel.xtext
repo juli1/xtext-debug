@@ -27,6 +27,8 @@ Entity:
 		features+=Feature*)?
 	('vars'
 		vars+=XVariableDeclaration*)?
+	('assert'
+		assertExpression+=XExpression)?
 	'}';
 
 Feature:

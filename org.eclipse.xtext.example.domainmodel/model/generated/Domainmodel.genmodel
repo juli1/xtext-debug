@@ -23,6 +23,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Domainmodel.ecore#//Entity/superType"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Domainmodel.ecore#//Entity/features"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Domainmodel.ecore#//Entity/vars"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Domainmodel.ecore#//Entity/assertExpression"/>
     </genClasses>
     <genClasses ecoreClass="Domainmodel.ecore#//Feature">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Domainmodel.ecore#//Feature/name"/>
