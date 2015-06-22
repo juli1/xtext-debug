@@ -41,9 +41,9 @@
 '['=66
 ']'=67
 'as'=64
-'assert'=57
 'case'=73
 'catch'=85
+'check'=57
 'default'=72
 'do'=76
 'else'=70

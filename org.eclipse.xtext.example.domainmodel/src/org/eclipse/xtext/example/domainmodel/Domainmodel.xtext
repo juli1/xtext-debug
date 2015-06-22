@@ -25,10 +25,10 @@ Entity:
 	'entity' name=ValidID ('extends' superType=JvmParameterizedTypeReference)? '{'
 	('features'
 		features+=Feature*)?
-	('vars'
-		vars+=XVariableDeclaration*)?
-	('assert'
-		assertExpression+=XExpression)?
+	('vars' '{'
+		vars+=XVariableDeclaration* '}')?
+	('check' '{'
+		assertExpression+=XExpression* '}')?
 	'}';
 
 Feature:

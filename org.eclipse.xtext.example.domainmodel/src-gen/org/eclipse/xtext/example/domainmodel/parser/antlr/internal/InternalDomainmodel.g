@@ -317,49 +317,65 @@ ruleEntity returns [EObject current=null]
     {
     	newLeafNode(otherlv_7, grammarAccess.getEntityAccess().getVarsKeyword_5_0());
     }
+	otherlv_8='{' 
+    {
+    	newLeafNode(otherlv_8, grammarAccess.getEntityAccess().getLeftCurlyBracketKeyword_5_1());
+    }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getEntityAccess().getVarsXVariableDeclarationParserRuleCall_5_1_0()); 
+	        newCompositeNode(grammarAccess.getEntityAccess().getVarsXVariableDeclarationParserRuleCall_5_2_0()); 
 	    }
-		lv_vars_8_0=ruleXVariableDeclaration		{
+		lv_vars_9_0=ruleXVariableDeclaration		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getEntityRule());
 	        }
        		add(
        			$current, 
        			"vars",
-        		lv_vars_8_0, 
+        		lv_vars_9_0, 
         		"XVariableDeclaration");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)*)?(	otherlv_9='assert' 
+)*	otherlv_10='}' 
     {
-    	newLeafNode(otherlv_9, grammarAccess.getEntityAccess().getAssertKeyword_6_0());
+    	newLeafNode(otherlv_10, grammarAccess.getEntityAccess().getRightCurlyBracketKeyword_5_3());
+    }
+)?(	otherlv_11='check' 
+    {
+    	newLeafNode(otherlv_11, grammarAccess.getEntityAccess().getCheckKeyword_6_0());
+    }
+	otherlv_12='{' 
+    {
+    	newLeafNode(otherlv_12, grammarAccess.getEntityAccess().getLeftCurlyBracketKeyword_6_1());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getEntityAccess().getAssertExpressionXExpressionParserRuleCall_6_1_0()); 
+	        newCompositeNode(grammarAccess.getEntityAccess().getAssertExpressionXExpressionParserRuleCall_6_2_0()); 
 	    }
-		lv_assertExpression_10_0=ruleXExpression		{
+		lv_assertExpression_13_0=ruleXExpression		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getEntityRule());
 	        }
        		add(
        			$current, 
        			"assertExpression",
-        		lv_assertExpression_10_0, 
+        		lv_assertExpression_13_0, 
         		"XExpression");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-))?	otherlv_11='}' 
+)*	otherlv_14='}' 
     {
-    	newLeafNode(otherlv_11, grammarAccess.getEntityAccess().getRightCurlyBracketKeyword_7());
+    	newLeafNode(otherlv_14, grammarAccess.getEntityAccess().getRightCurlyBracketKeyword_6_3());
+    }
+)?	otherlv_15='}' 
+    {
+    	newLeafNode(otherlv_15, grammarAccess.getEntityAccess().getRightCurlyBracketKeyword_7());
     }
 )
 ;

@@ -334,7 +334,7 @@ public abstract class AbstractDomainmodelSemanticSequencer extends XbaseSemantic
 	
 	/**
 	 * Constraint:
-	 *     (name=ValidID superType=JvmParameterizedTypeReference? features+=Feature* vars+=XVariableDeclaration* assertExpression+=XExpression?)
+	 *     (name=ValidID superType=JvmParameterizedTypeReference? features+=Feature* vars+=XVariableDeclaration* assertExpression+=XExpression*)
 	 */
 	protected void sequence_Entity(EObject context, Entity semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

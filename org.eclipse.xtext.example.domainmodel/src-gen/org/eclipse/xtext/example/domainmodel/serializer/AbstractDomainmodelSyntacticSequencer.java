@@ -22,7 +22,8 @@ public abstract class AbstractDomainmodelSyntacticSequencer extends AbstractSynt
 
 	protected DomainmodelGrammarAccess grammarAccess;
 	protected AbstractElementAlias match_Entity_FeaturesKeyword_4_0_q;
-	protected AbstractElementAlias match_Entity_VarsKeyword_5_0_q;
+	protected AbstractElementAlias match_Entity___CheckKeyword_6_0_LeftCurlyBracketKeyword_6_1_RightCurlyBracketKeyword_6_3__q;
+	protected AbstractElementAlias match_Entity___VarsKeyword_5_0_LeftCurlyBracketKeyword_5_1_RightCurlyBracketKeyword_5_3__q;
 	protected AbstractElementAlias match_XBlockExpression_SemicolonKeyword_2_1_q;
 	protected AbstractElementAlias match_XExpressionInClosure_SemicolonKeyword_1_1_q;
 	protected AbstractElementAlias match_XFunctionTypeRef___LeftParenthesisKeyword_0_0_RightParenthesisKeyword_0_2__q;
@@ -34,7 +35,8 @@ public abstract class AbstractDomainmodelSyntacticSequencer extends AbstractSynt
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (DomainmodelGrammarAccess) access;
 		match_Entity_FeaturesKeyword_4_0_q = new TokenAlias(false, true, grammarAccess.getEntityAccess().getFeaturesKeyword_4_0());
-		match_Entity_VarsKeyword_5_0_q = new TokenAlias(false, true, grammarAccess.getEntityAccess().getVarsKeyword_5_0());
+		match_Entity___CheckKeyword_6_0_LeftCurlyBracketKeyword_6_1_RightCurlyBracketKeyword_6_3__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getEntityAccess().getCheckKeyword_6_0()), new TokenAlias(false, false, grammarAccess.getEntityAccess().getLeftCurlyBracketKeyword_6_1()), new TokenAlias(false, false, grammarAccess.getEntityAccess().getRightCurlyBracketKeyword_6_3()));
+		match_Entity___VarsKeyword_5_0_LeftCurlyBracketKeyword_5_1_RightCurlyBracketKeyword_5_3__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getEntityAccess().getVarsKeyword_5_0()), new TokenAlias(false, false, grammarAccess.getEntityAccess().getLeftCurlyBracketKeyword_5_1()), new TokenAlias(false, false, grammarAccess.getEntityAccess().getRightCurlyBracketKeyword_5_3()));
 		match_XBlockExpression_SemicolonKeyword_2_1_q = new TokenAlias(false, true, grammarAccess.getXBlockExpressionAccess().getSemicolonKeyword_2_1());
 		match_XExpressionInClosure_SemicolonKeyword_1_1_q = new TokenAlias(false, true, grammarAccess.getXExpressionInClosureAccess().getSemicolonKeyword_1_1());
 		match_XFunctionTypeRef___LeftParenthesisKeyword_0_0_RightParenthesisKeyword_0_2__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getXFunctionTypeRefAccess().getLeftParenthesisKeyword_0_0()), new TokenAlias(false, false, grammarAccess.getXFunctionTypeRefAccess().getRightParenthesisKeyword_0_2()));
@@ -82,8 +84,10 @@ public abstract class AbstractDomainmodelSyntacticSequencer extends AbstractSynt
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
 			if(match_Entity_FeaturesKeyword_4_0_q.equals(syntax))
 				emit_Entity_FeaturesKeyword_4_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if(match_Entity_VarsKeyword_5_0_q.equals(syntax))
-				emit_Entity_VarsKeyword_5_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_Entity___CheckKeyword_6_0_LeftCurlyBracketKeyword_6_1_RightCurlyBracketKeyword_6_3__q.equals(syntax))
+				emit_Entity___CheckKeyword_6_0_LeftCurlyBracketKeyword_6_1_RightCurlyBracketKeyword_6_3__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_Entity___VarsKeyword_5_0_LeftCurlyBracketKeyword_5_1_RightCurlyBracketKeyword_5_3__q.equals(syntax))
+				emit_Entity___VarsKeyword_5_0_LeftCurlyBracketKeyword_5_1_RightCurlyBracketKeyword_5_3__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_XBlockExpression_SemicolonKeyword_2_1_q.equals(syntax))
 				emit_XBlockExpression_SemicolonKeyword_2_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_XExpressionInClosure_SemicolonKeyword_1_1_q.equals(syntax))
@@ -105,12 +109,12 @@ public abstract class AbstractDomainmodelSyntacticSequencer extends AbstractSynt
 	 *     'features'?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     name=ValidID '{' (ambiguity) 'vars' vars+=XVariableDeclaration
-	 *     name=ValidID '{' (ambiguity) 'vars'? 'assert' assertExpression+=XExpression
-	 *     name=ValidID '{' (ambiguity) 'vars'? '}' (rule end)
-	 *     superType=JvmParameterizedTypeReference '{' (ambiguity) 'vars' vars+=XVariableDeclaration
-	 *     superType=JvmParameterizedTypeReference '{' (ambiguity) 'vars'? 'assert' assertExpression+=XExpression
-	 *     superType=JvmParameterizedTypeReference '{' (ambiguity) 'vars'? '}' (rule end)
+	 *     name=ValidID '{' (ambiguity) 'vars' '{' vars+=XVariableDeclaration
+	 *     name=ValidID '{' (ambiguity) ('vars' '{' '}')? 'check' '{' assertExpression+=XExpression
+	 *     name=ValidID '{' (ambiguity) ('vars' '{' '}')? ('check' '{' '}')? '}' (rule end)
+	 *     superType=JvmParameterizedTypeReference '{' (ambiguity) 'vars' '{' vars+=XVariableDeclaration
+	 *     superType=JvmParameterizedTypeReference '{' (ambiguity) ('vars' '{' '}')? 'check' '{' assertExpression+=XExpression
+	 *     superType=JvmParameterizedTypeReference '{' (ambiguity) ('vars' '{' '}')? ('check' '{' '}')? '}' (rule end)
 	 */
 	protected void emit_Entity_FeaturesKeyword_4_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -118,17 +122,31 @@ public abstract class AbstractDomainmodelSyntacticSequencer extends AbstractSynt
 	
 	/**
 	 * Ambiguous syntax:
-	 *     'vars'?
+	 *     ('check' '{' '}')?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     features+=Feature (ambiguity) 'assert' assertExpression+=XExpression
-	 *     features+=Feature (ambiguity) '}' (rule end)
-	 *     name=ValidID '{' 'features'? (ambiguity) 'assert' assertExpression+=XExpression
-	 *     name=ValidID '{' 'features'? (ambiguity) '}' (rule end)
-	 *     superType=JvmParameterizedTypeReference '{' 'features'? (ambiguity) 'assert' assertExpression+=XExpression
-	 *     superType=JvmParameterizedTypeReference '{' 'features'? (ambiguity) '}' (rule end)
+	 *     features+=Feature ('vars' '{' '}')? (ambiguity) '}' (rule end)
+	 *     name=ValidID '{' 'features'? ('vars' '{' '}')? (ambiguity) '}' (rule end)
+	 *     superType=JvmParameterizedTypeReference '{' 'features'? ('vars' '{' '}')? (ambiguity) '}' (rule end)
+	 *     vars+=XVariableDeclaration '}' (ambiguity) '}' (rule end)
 	 */
-	protected void emit_Entity_VarsKeyword_5_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Entity___CheckKeyword_6_0_LeftCurlyBracketKeyword_6_1_RightCurlyBracketKeyword_6_3__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     ('vars' '{' '}')?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     features+=Feature (ambiguity) 'check' '{' assertExpression+=XExpression
+	 *     features+=Feature (ambiguity) ('check' '{' '}')? '}' (rule end)
+	 *     name=ValidID '{' 'features'? (ambiguity) 'check' '{' assertExpression+=XExpression
+	 *     name=ValidID '{' 'features'? (ambiguity) ('check' '{' '}')? '}' (rule end)
+	 *     superType=JvmParameterizedTypeReference '{' 'features'? (ambiguity) 'check' '{' assertExpression+=XExpression
+	 *     superType=JvmParameterizedTypeReference '{' 'features'? (ambiguity) ('check' '{' '}')? '}' (rule end)
+	 */
+	protected void emit_Entity___VarsKeyword_5_0_LeftCurlyBracketKeyword_5_1_RightCurlyBracketKeyword_5_3__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
